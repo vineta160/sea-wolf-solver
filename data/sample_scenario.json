@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Sea Wolf-style educational reconstruction",
+    "note": "Observed values are copied from conversation screenshots; all other values are illustrative reconstruction data.",
+    "observed_rules": [
+      "Site 1 profile: Density 6-8, Energy 2-4, Size 8-10, desired Light Sensitive, undesired Heat Resistant.",
+      "Site 2 initially reveals only Density 8-10.",
+      "Prospect flow: add 4 microbes to pool, then pick 3 for treatment averaging.",
+      "Treatment feedback uses averages, midpoint target framing, and efficiency percentages."
+    ],
+    "inferred_rules": [
+      "Midpoint closeness is normalized per attribute from 0 to 1.",
+      "Undesired trait is a hard violation for recommendation validity.",
+      "Unknown Site 2 constraints remain unknown and are reported as uncertainty."
+    ]
+  },
+  "weights": {
+    "attribute_weight": 0.7,
+    "trait_weight": 0.3
+  },
+  "sites": {
+    "Site 1": {
+      "ranges": {
+        "density": [6, 8],
+        "energy": [2, 4],
+        "size": [8, 10]
+      },
+      "desired_trait": "Light Sensitive",
+      "undesired_trait": "Heat Resistant"
+    },
+    "Site 2": {
+      "ranges": {
+        "density": [8, 10]
+      },
+      "desired_trait": null,
+      "undesired_trait": null
+    }
+  },
+  "microbes": [
+    {"name": "Drava Volvox", "density": 6, "energy": 3, "size": 2, "traits": ["Hydrophilic"]},
+    {"name": "Lumen Spira", "density": 7, "energy": 3, "size": 9, "traits": ["Light Sensitive"]},
+    {"name": "Ferro Coccus", "density": 8, "energy": 2, "size": 8, "traits": ["Heat Resistant"]},
+    {"name": "Nera Bloom", "density": 6, "energy": 4, "size": 10, "traits": ["Light Sensitive"]},
+    {"name": "Quartz Nidus", "density": 9, "energy": 5, "size": 7, "traits": ["Acidic"]},
+    {"name": "Helio Thread", "density": 7, "energy": 2, "size": 9, "traits": ["Light Sensitive"]},
+    {"name": "Brine Mote", "density": 8, "energy": 3, "size": 8, "traits": ["Saline"]},
+    {"name": "Cinder Veil", "density": 5, "energy": 3, "size": 9, "traits": ["Heat Resistant"]},
+    {"name": "Mist Orb", "density": 7, "energy": 4, "size": 8, "traits": ["Light Sensitive", "Hydrophilic"]},
+    {"name": "Tide Prism", "density": 8, "energy": 3, "size": 10, "traits": ["Light Sensitive"]}
+  ],
+  "prospect": {
+    "initial_pool": ["Drava Volvox", "Lumen Spira", "Brine Mote", "Quartz Nidus"],
+    "available_additional": ["Ferro Coccus", "Nera Bloom", "Helio Thread", "Cinder Veil", "Mist Orb", "Tide Prism"],
+    "additional_pick_count": 4,
+    "treatment_pick_count": 3,
+    "target_site": "Site 1"
+  }
+}
